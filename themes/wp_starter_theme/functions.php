@@ -15,11 +15,8 @@
 define ("INCLUDE_PATH", '..' . str_replace(site_url(), '', get_template_directory_uri()) . '/includes/');
 define ("DIST_PATH", "/ressources/dist/");
 
-$styles_path = DIST_PATH . "css/";
-$scripts_vendors_path = DIST_PATH . "js/vendors/";	
-$scripts_internals_path = DIST_PATH . "js/internals/";
 
-// Get lang Polylang
+// Get WP current lang
 global $lang;
 $lang = get_locale();
 
@@ -128,10 +125,13 @@ add_action( 'wp_enqueue_scripts', 'custom_scripts' );
 
 function custom_scripts() {
 
+	$scripts_vendors_path = DIST_PATH . "js/vendors/";	
+	$scripts_internals_path = DIST_PATH . "js/internals/";
+	
 	// Remove Jquery of Wordpress
 	wp_deregister_script("jquery");
 
-	wp_enqueue_script( 'jquery', get_template_directory_uri() . $scripts_vendors_path . 'jquery-3.2.1.min.js', false, null, true);
+	wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', false, null, true);
 	
 	wp_enqueue_script( 'script', get_template_directory_uri() . $scripts_internals_path . 'script.min.js', false, null, true);
 	
@@ -148,7 +148,9 @@ function custom_scripts() {
  add_action( 'wp_enqueue_scripts', 'custom_styles' );
 
 function custom_styles() {
-	
+
+	$styles_path = DIST_PATH . "css/";
+
 	wp_enqueue_style( 'nexus-style', get_template_directory_uri() . $styles_path . 'styles.min.css');
 		
 }
