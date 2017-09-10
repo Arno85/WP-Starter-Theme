@@ -1,7 +1,7 @@
 <?php
 
 function example_main_nav() {
-
+    
     $menu = array(
         'theme_location'  => 'header-menu',
         'container'       => 'nav',
@@ -20,9 +20,6 @@ function example_main_nav() {
         // 'depth'           => 0,
         // 'walker'          =>
     );
-    // if ($lang  == "fr_CA" || $lang == "fr") {
-    //     $menu["menu"] = "main-fr";
-    // }
     
     wp_nav_menu($menu);
 }

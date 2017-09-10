@@ -1,4 +1,4 @@
-<?php function register_cpt_EXAMPLE() {
+<?php function register_My_CPT() {
    /**
     * Register a custom post type
     *
@@ -7,7 +7,7 @@
     * @see add_post_type_support for full descriptions of 'supports' options
     * @see get_post_type_capabilities for full list of available fine grained capabilities that are supported
     */
-    register_post_type( 'CPT_EXAMPLE', array(
+    register_post_type( 'My_CPT', array(
         'public' => true,
         'publicly_queryable' => true,
         'show_ui' => true,
@@ -23,21 +23,22 @@
         'capability_type' => 'post',
         'capabilities' => array(),
         'labels' => array(
-            'name' => __( 'CPT_EXAMPLES (plural)', 'example' ),
-            'singular_name' => __( 'CPT_EXAMPLE (singular)', 'example' ),
+            'name' => __( 'My_CPTS (plural)', 'example' ),
+            'singular_name' => __( 'My_CPT (singular)', 'example' ),
             'add_new' => __( 'Add new', 'example' ),
-            'add_new_item' => __( 'Add a new CPT_EXAMPLE (singular)', 'example' ),
-            'edit_item' => __( 'Edit CPT_EXAMPLE (singular)', 'example' ),
-            'new_item' => __( 'New CPT_EXAMPLE (singular)', 'example' ),
-            'all_items' => __( 'All CPT_EXAMPLES (plural)', 'example' ),
-            'view_item' => __( 'View CPT_EXAMPLE (singular)', 'example' ),
-            'search_items' => __( 'Search CPT_EXAMPLES (plural)', 'example' ),
-            'not_found' =>  __( 'No CPT_EXAMPLE (singular) found', 'example' ),
-            'not_found_in_trash' => __( 'No CPT_EXAMPLE (singular) found in the trash', 'example' ),
+            'add_new_item' => __( 'Add a new My_CPT (singular)', 'example' ),
+            'edit_item' => __( 'Edit My_CPT (singular)', 'example' ),
+            'new_item' => __( 'New My_CPT (singular)', 'example' ),
+            'all_items' => __( 'All My_CPTS (plural)', 'example' ),
+            'view_item' => __( 'View My_CPT (singular)', 'example' ),
+            'search_items' => __( 'Search My_CPTS (plural)', 'example' ),
+            'not_found' =>  __( 'No My_CPT (singular) found', 'example' ),
+            'not_found_in_trash' => __( 'No My_CPT (singular) found in the trash', 'example' ),
             'parent_item_colon' => '',
-            'menu_name' => 'CPT_EXAMPLE (plural)'
+            'menu_name' => 'My_CPT (plural)'
         )
     ) );
 }
-add_action( 'init', 'register_cpt_EXAMPLE' );
+//Uncomment the following action to set your custom post type in WP
+//add_action( 'init', 'register_My_CPT' );
 ?>
