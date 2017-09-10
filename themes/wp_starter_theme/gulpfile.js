@@ -1,5 +1,5 @@
 /*==============================================
-======= REQUIRES 
+======= PLUGINS 
 ==============================================*/
 
 var gulp = require('gulp'),
@@ -26,6 +26,7 @@ var path = {
     dist: 'ressources/dist/'
 }
 
+// Change this by your website URL.
 var urlToSync = "http://localhost/wordpress/";
 
 /*==============================================
@@ -99,13 +100,8 @@ gulp.task('clean-sass', function(){
         .pipe(notify('Sass cleaned ✨'))
 });
 
-gulp.task("lint", function() {
-    gulp.src(path.src + 'js/internals/**/*.js')
-        
-});
-
 /**
-* Auto refresh browser when changes are applied in the css, js, and php files
+* Auto refresh browser when changes are applied in the css, js, php and html files
 */
 gulp.task('browser-sync', function() {
     
