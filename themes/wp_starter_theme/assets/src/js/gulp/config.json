@@ -1,0 +1,38 @@
+{
+    "env": {
+        "stagingUrl": "",
+        "prodUrl": "",
+        "localUrl": "localdev/wordpress"
+    },
+    "dirPath": {
+        "src": "./assets/src/",
+        "dist": "./assets/dist/"
+    },
+    "tasksPath": "js/gulp/tasks/",
+    "sftpSrc": "../../**/*",
+    "browserSync": {
+        "files": [
+        "config.dirPath.dist + '**/*.js'",
+        "config.dirPath.dist + '**/*.css'",
+        "./**/*.php",
+        "./**/*.html"
+        ]
+    },
+    "dbScripts": {
+        "folderPath": "../../scripts/",
+        "sqlTempFileName": "temp.sql",
+        "scriptImport": "db-import.ps1",
+        "scriptExport": "db-export.ps1"
+    },
+    "remote_db": {
+        "hostName": "remote_hostname",
+        "userName": "remote_username",
+        "port": "21",
+        "stagingDatabase": "remote_staging_database",
+        "prodDatabase": "remote_prod_database"
+    },
+    "local_db": {
+        "userName": "root",
+        "database": "local_database"
+    }
+}

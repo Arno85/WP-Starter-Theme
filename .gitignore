@@ -2,3 +2,4 @@ node_modules/
 dist/
 upgrade/
 uploads/
+themes/wp_starter_theme/package-lock.json
