@@ -97,6 +97,7 @@ define('DB_COLLATE', '');
 define('WP_SITEURL'	, $url);
 define('WP_HOME'	, $url);
 
+define('DISALLOW_FILE_EDIT', true);
 define('WP_AUTO_UPDATE_CORE', false); /* Set true for WP auto-update */
 
 
