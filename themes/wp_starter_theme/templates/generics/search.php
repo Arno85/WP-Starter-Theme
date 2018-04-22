@@ -18,7 +18,7 @@
 		<?php
 		while ( have_posts() ) : the_post();
 
-			get_template_part( 'template-parts/content', 'search' );
+			get_template_part( 'templates/parts/posts-content');
 
 		endwhile;
 
@@ -26,7 +26,7 @@
 
 	else :
 
-		get_template_part( 'template-parts/content', 'none' );
+		get_template_part( 'templates/parts/posts-none');
 
 	endif; ?>
 

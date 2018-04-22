@@ -17,30 +17,17 @@
 			?>
 		</div>
 		<div class="page-content">
-		<?php 
-		while ( have_posts() ) : the_post(); ?>
-			<article>
-				<div class="page-header">
-					<h1 class="page-title"><?= the_title(); ?></h1>
-				</div> 
-				<div class="page-content">
-					<?= the_excerpt(); ?>
-				</div>
-			</article>
-		<?php
 
-		
-			//get_template_part( 'template-parts/content', get_post_format() );
+		<?php 
+		while ( have_posts() ) : the_post(); 
+
+			get_template_part( 'templates/parts/posts-content');
 
 		endwhile;
 
-		the_posts_navigation();
-		?>
-		</div>
-		<?php
 	else :
 
-		get_template_part( 'template-parts/content', 'none' );
+		get_template_part( 'templates/parts/posts-none');
 
 	endif; ?>
 	

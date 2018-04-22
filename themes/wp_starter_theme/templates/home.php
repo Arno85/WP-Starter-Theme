@@ -4,7 +4,7 @@
  * @author Arnaud Martin
  */
 ?>
-    <h1><?php echo get_the_title(); ?></h1>
+    <h1><?php the_title(); ?></h1>
     <ul>
         <li>01</li>
         <li>02</li>
