@@ -4,18 +4,20 @@
  *
  * @author Arnaud Martin
  */
+
 use Core\Autoloader;
 use Core\Theme\ThemeSetup;
 use Core\Theme\CustomizeDashboard;
 use Core\Theme\Medias;
 use Core\Scripts\EnqueueScript;
 use Core\Scripts\EnqueueStyle;
-use Core\Debug;
+use Core\cpt\CustomPostType;
+use Core\Debug\Debug;
+use Core\Debug\AdminDebug;
 
 require_once('core/Autoloader.php');
 Autoloader::register();
 
-$debug = new Debug();
 ThemeSetup::init();
 Medias::init();
 CustomizeDashboard::init();
@@ -49,3 +51,4 @@ new EnqueueScript('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/
 //		CUSTOM POST TYPES
 //////////////////////////////////////////
 
+$employee = new CustomPostType('employee');
