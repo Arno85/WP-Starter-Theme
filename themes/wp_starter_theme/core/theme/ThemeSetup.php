@@ -1,6 +1,6 @@
 <?php
 
-namespace Core;
+namespace Core\Theme;
 
 class ThemeSetup {
 
@@ -14,6 +14,7 @@ class ThemeSetup {
         add_action( 'after_setup_theme', array(__CLASS__, 'manageTitleDocument') );
         add_action( 'after_setup_theme', array(__CLASS__, 'addCustomLogoSupport') );
         add_action( 'widgets_init', array(__CLASS__, 'addWidgetSupport') );
+        add_filter( 'template_include', array(__CLASS__, 'headerAndFooterAutoIncludes') );
         self::setStaticFrontPage();
     }
 
@@ -70,6 +71,17 @@ class ThemeSetup {
             update_option( 'page_on_front', $homepage->ID );
             update_option( 'show_on_front', 'page' );
         }
+    }
+
+    /**
+     * Automatically include header and footer files in every templates
+     *
+     * @return void
+     */
+    public function headerAndFooterAutoIncludes($template) {
+        get_template_part('templates/common/header');
+        include $template;
+        get_template_part('templates/common/footer');        
     }
 
 }
