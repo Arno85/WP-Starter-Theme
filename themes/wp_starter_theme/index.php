@@ -1,19 +1,26 @@
 <?php
 /**
  * The main template file
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- *
- *
- * @package wp_starter_theme
+ * @author Arnaud Martin
  */
 
-get_header(); 
-?>
+if(is_404()){
+    include('templates/generics/404.php');
+}
+else if(is_archive()){
+    include('templates/generics/archive.php');
+}
+else if(is_single()){
+    include('templates/generics/single.php');
+}
+else if(is_search()){
+    include('templates/generics/search.php');
+}
+else if(is_comment_feed()){
+    include('templates/generics/comments.php');
+}
+else {
+    include('templates/generics/default.php');
+}
 
-	
-<?php
-get_footer();
+?>
